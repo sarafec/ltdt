@@ -79,7 +79,7 @@ function loadVocabPages(targetDataId) {
 	vocabContainer.classList.add("vocab-container");
 	appContainer.appendChild(vocabContainer);
 
-	//vocabContainer.addEventListener("click", function(evt) { let index = +evt.target.getAttribute("data-id"); postNextWord(index, targetData); evt.preventDefault(); });
+	vocabContainer.addEventListener("click", function(evt) { let index = +evt.target.getAttribute("data-id"); postNextWord(index, targetData); evt.preventDefault(); });
 	vocabContainer.addEventListener("keydown", function(evt) { if(evt.which === 39) {  let index = +evt.target.children[0].getAttribute("data-id"); postNextWord(index, targetData); evt.preventDefault(); } });
 	vocabContainer.addEventListener("keydown", function(evt) { if(evt.which === 37) {  let index = +evt.target.children[0].getAttribute("data-id"); postPrevWord(index, targetData); evt.preventDefault(); } });
 
