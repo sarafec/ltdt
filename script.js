@@ -26,7 +26,7 @@ function createUnitList(data) {
 
 	let appDiv = document.querySelector(".app");
 
-	for(let i = 0; i < data.length; i++){
+	for(let i = 0; i < 3; i++){
 		let tempDiv = document.createElement("div");
 		tempDiv.classList.add("unit-entry");
 		tempDiv.setAttribute("data-id", data[i].unit);
