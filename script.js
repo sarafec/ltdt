@@ -4,23 +4,23 @@ let getData = function(){
 	var request = new XMLHttpRequest();
 	request.open('GET', 'data.json', true);
 	request.onload = function() {
-	  if (request.status >= 200 && request.status < 400) {
-	    var data = JSON.parse(request.responseText);
-	    unitData = data;
-	    return createUnitList(data);
-	  } else {
-	    // We reached our target server, but it returned an error
-	    console.log("error!");
+		if (request.status >= 200 && request.status < 400) {
+			var data = JSON.parse(request.responseText);
+			unitData = data;
+			return createUnitList(data);
+		} else {
+		// We reached our target server, but it returned an error
+		console.log("error!");
 
-	  }
+	}
 	};
-	request.onerror = function() {
-	  // There was a connection error of some sort
-	  console.log("connection error!");
+		request.onerror = function() {
+		// There was a connection error of some sort
+		console.log("connection error!");
 	};
 
 	request.send();
-}
+};
 
 function createUnitList(data) {
 
@@ -122,8 +122,8 @@ function postNextWord(index, unitData) {
 	let vocabElemEng = document.querySelector(".vocab-elem-eng");
 	vocabElemEng.remove();
 
-	loadWords(unitData, index); 
-}
+	loadWords(unitData, index);
+};
 
 function postPrevWord(index, unitData) {
 	if(index > 0){
